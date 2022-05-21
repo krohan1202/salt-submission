@@ -2,9 +2,10 @@ import React from "react";
 import { Container, Grid, Typography, Button } from "@mui/material";
 import { Link } from "react-router-dom";
 
-import HeroBg from "../../../assets/Home/HeroBg.png";
-
 import { useStyles } from "./HeroSection.style";
+
+//Asset
+import HeroBg from "../../../assets/Home/HeroBg.png";
 
 export default function HeroSection() {
   const classes = useStyles();
