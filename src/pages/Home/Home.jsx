@@ -1,8 +1,9 @@
 import React from "react";
 
 // Components
-import HeroSection from "../../components/Home/HeroSection/HeroSection";
-import Pricing from "../../components/Pricing/Pricing";
+import HeroSection from "../../components/Home/HeroSection/HeroSection.jsx";
+import Pricing from "../../components/Pricing/Pricing.jsx";
+import ConvertCurrency from "../../components/ConvertCurrency/ConvertCurrency.jsx";
 
 // import { useStyles } from "./Home.style.js";
 
@@ -11,6 +12,7 @@ export default function Home() {
     <>
       <HeroSection />
       <Pricing />
+      <ConvertCurrency />
     </>
   );
 }

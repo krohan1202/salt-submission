@@ -3,7 +3,7 @@ import { makeStyles } from "@mui/styles";
 export const useStyles = makeStyles((theme) => ({
   pricingSection: {
     position: "relative",
-    margin: "5.6rem auto 0 !important",
+    margin: "5.6rem auto 3rem !important",
     width: "90%",
     backgroundColor: "#f6f6f6",
     padding: "3.5rem 0",
