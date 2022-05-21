@@ -34,7 +34,7 @@ const theme = createTheme({
           fontWeight: "700",
           margin: "0 0.6rem 0 1.5rem",
           borderRadius: "100rem",
-          padding: "0.54rem 1.67rem",
+          padding: "0.4rem 1.67rem",
           border: "2.5px solid #1E5EF3",
           backgroundColor: "transparent",
           color: "#1E5EF3",
@@ -46,10 +46,11 @@ const theme = createTheme({
           },
         },
         contained: {
-          textTransform: "lowercase",
+          textTransform: "none",
           fontFamily: "'HK Grotesk', sans-serif",
           fontWeight: "700",
           cursor: "pointer",
+          padding: "0.65rem 3.34rem",
           background: "#1E5EF3",
           border: "2px solid #1E5EF3",
           boxShadow:

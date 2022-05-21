@@ -1,9 +1,14 @@
 import React from "react";
 
-export default function Home(props) {
+// Home components
+import HeroSection from "../../components/Home/HeroSection/HeroSection";
+
+// import { useStyles } from "./Home.style.js";
+
+export default function Home() {
   return (
     <>
-      <h1>Check</h1>
+      <HeroSection />
     </>
   );
 }
