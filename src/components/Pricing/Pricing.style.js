@@ -5,7 +5,7 @@ export const useStyles = makeStyles((theme) => ({
     position: "relative",
     margin: "5.6rem auto 3rem !important",
     width: "90%",
-    backgroundColor: "#f6f6f6",
+    backgroundColor: theme.palette.background.secondary,
     padding: "3.5rem 0",
   },
   pricingCard: {

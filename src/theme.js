@@ -12,6 +12,7 @@ const theme = createTheme({
     alternate: { main: "#fff" }, // white
     background: {
       default: "#fff",
+      secondary: "#f6f6f6",
     },
   },
   typography: {

@@ -11,14 +11,14 @@ import {
 import { useStyles } from "./ConvertCurrency.style";
 
 // Assets
-import ArrowIcon from "../../assets/Home/ArrowIcon.svg";
-import ShieldIcon from "../../assets/Home/ShieldIcon.svg";
+import ArrowIcon from "../../../assets/Home/ArrowIcon.svg";
+import ShieldIcon from "../../../assets/Home/ShieldIcon.svg";
 
 export default function ConvertCurrency() {
   const classes = useStyles();
 
-  const [amount1, setAmount1] = useState(1);
-  const [amount2, setAmount2] = useState(1);
+  const [amount1, setAmount1] = useState(0);
+  const [amount2, setAmount2] = useState(0);
   const [currency1, setCurrency1] = useState("USD");
   const [currency2, setCurrency2] = useState("EUR");
   const [rates, setRates] = useState([]);
@@ -45,7 +45,7 @@ export default function ConvertCurrency() {
   useEffect(() => {
     if (!!rates) {
       function init() {
-        handleAmount1Change(1);
+        handleAmount1Change(0);
       }
       init();
     }
@@ -106,20 +106,21 @@ export default function ConvertCurrency() {
           <Select
             labelId="demo-simple-select-label"
             id="demo-simple-select"
-            // value={currency1}
-            value={"INR"}
+            value={currency1}
+            // value={"INR"}
             onChange={(ev) => handleCurrency1Change(ev.target.value)}
             className={classes.currency_select}
           >
-            {/* {Object.keys(rates).map((currency) => {
-              return <MenuItem value={currency} className={classes.currency_currencyDropdownItems}>{currency}</MenuItem>;
-            })} */}
-            <MenuItem
-              value={"INR"}
-              className={classes.currency_currencyDropdownItems}
-            >
-              INR
-            </MenuItem>
+            {Object.keys(rates).map((currency) => {
+              return (
+                <MenuItem
+                  value={currency}
+                  className={classes.currency_currencyDropdownItems}
+                >
+                  {currency}
+                </MenuItem>
+              );
+            })}
           </Select>
         </Grid>
         <Grid item sm={12} md={2} align="center">
@@ -138,19 +139,20 @@ export default function ConvertCurrency() {
           <Select
             labelId="demo-simple-select-label"
             id="demo-simple-select"
-            value={"USD"}
-            // onChange={(ev) => handleCurrency2Change(ev.target.value)}
+            value={currency2}
+            onChange={(ev) => handleCurrency2Change(ev.target.value)}
             className={classes.currency_select}
           >
-            {/* {Object.keys(rates).map((currency) => {
-              return <MenuItem value={currency} className={classes.currency_currencyDropdownItems}>{currency}</MenuItem>;
-            })} */}
-            <MenuItem
-              value={"USD"}
-              className={classes.currency_currencyDropdownItems}
-            >
-              USD
-            </MenuItem>
+            {Object.keys(rates).map((currency) => {
+              return (
+                <MenuItem
+                  value={currency}
+                  className={classes.currency_currencyDropdownItems}
+                >
+                  {currency}
+                </MenuItem>
+              );
+            })}
           </Select>
           <div>
             <Typography

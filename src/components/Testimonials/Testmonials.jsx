@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Grid, Typography, useMediaQuery } from "@mui/material";
+import { Container, Typography, useMediaQuery } from "@mui/material";
 import { useTheme } from "@mui/styles";
 
 import TestimonialCard from "./TestimonialCard";

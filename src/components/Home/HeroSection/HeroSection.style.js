@@ -30,5 +30,8 @@ export const useStyles = makeStyles((theme) => ({
     position: "relative",
     width: "76%",
     verticalAlign: "middle",
+    [theme.breakpoints.down("md")]: {
+      marginTop: "4rem !important",
+    },
   },
 }));

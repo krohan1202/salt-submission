@@ -15,7 +15,7 @@ export default function HeroSection() {
       {/* Hero Part */}
       <Container maxWidth="l" className={classes.heroContainer}>
         <Grid container>
-          <Grid item xs={6}>
+          <Grid item sm={12} md={6}>
             <Typography variant="h2" className={classes.heroHeading}>
               Not your average banking experience.
             </Typography>
@@ -30,7 +30,7 @@ export default function HeroSection() {
               </Link>
             </div>
           </Grid>
-          <Grid item xs={6} align="center">
+          <Grid item xs={12} md={6} align="center">
             <img src={HeroBg} alt="HeroBg" className={classes.heroImg} />
           </Grid>
         </Grid>
