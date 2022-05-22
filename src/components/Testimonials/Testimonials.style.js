@@ -3,7 +3,7 @@ import { makeStyles } from "@mui/styles";
 export const useStyles = makeStyles((theme) => ({
   testimonialsSection: {
     position: "relative",
-    margin: "0.6rem auto 23rem !important",
+    margin: "0.6rem auto 1rem !important",
     width: "90%",
     padding: "3.5rem 0",
     zIndex: "-1",
