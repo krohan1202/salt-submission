@@ -5,7 +5,6 @@ export const useStyles = makeStyles((theme) => ({
     position: "relative",
     boxShadow:
       "2px 2px 70px rgba(0, 0, 0, 0.05), 0px 47.0588px 95px rgba(0, 0, 0, 0.03), 0px 37.6471px 55.1198px rgba(0, 0, 0, 0.0227778), 0px 17.6471px 29.9782px rgba(0, 0, 0, 0.0182222)",
-    marginBottom: "10vw !important",
     padding: "3.2rem 6rem 2.5rem !important",
     borderRadius: "44px !important",
   },

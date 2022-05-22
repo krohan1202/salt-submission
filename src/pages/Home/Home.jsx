@@ -4,6 +4,7 @@ import React from "react";
 import HeroSection from "../../components/Home/HeroSection/HeroSection.jsx";
 import Pricing from "../../components/Pricing/Pricing.jsx";
 import ConvertCurrency from "../../components/ConvertCurrency/ConvertCurrency.jsx";
+import Testimonials from "../../components/Testimonials/Testmonials.jsx";
 
 // import { useStyles } from "./Home.style.js";
 
@@ -13,6 +14,7 @@ export default function Home() {
       <HeroSection />
       <Pricing />
       <ConvertCurrency />
+      <Testimonials />
     </>
   );
 }
