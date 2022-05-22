@@ -1,37 +1,27 @@
 import React from "react";
-import "./styles.css";
+import { Container, Grid, Typography, useMediaQuery } from "@mui/material";
+import { useTheme } from "@mui/styles";
 
-import {
-  Container,
-  Grid,
-  Typography,
-  Card,
-  CardContent,
-  Button,
-} from "@mui/material";
+import TestimonialCard from "./TestimonialCard";
 
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, FreeMode, Pagination } from "swiper";
+
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
 
-// import required modules
-import { Autoplay, FreeMode, Pagination } from "swiper";
+import "./swiperStyles.css"; // Overiding styles of default swiper components
 
 import { useStyles } from "./Testimonials.style";
 
-// Assets
-import ProfileImg from "../../assets/Home/ProfileImg.png";
-import StarIcon from "../../assets/Home/StarIcon.svg";
-
 export default function Testmonials() {
-  const classes = useStyles();
+  const theme = useTheme();
+  const isDesktop = useMediaQuery(theme.breakpoints.up("md"));
 
-  //   paginationBulletRender: function (swiper, index, className) {
-  //     return '< div class=" '+ className +' ">< div class="inner-dot">< /div>< /div>';
-  //   }
+  const classes = useStyles();
+  const slidesNum = 3;
 
   return (
     <div className={classes.testimonialsSection}>
@@ -48,67 +38,28 @@ export default function Testmonials() {
           cheerfully
         </Typography>
 
-        <Container>
+        <Container style={{ marginTop: "3.5rem" }}>
           <Swiper
-            slidesPerView={3}
+            slidesPerView={isDesktop ? 3 : 1}
             spaceBetween={30}
             freeMode={true}
+            loop={true}
             pagination={{
               clickable: true,
             }}
-            // autoplay={{
-            //   delay: 4800,
-            //   disableOnInteraction: false,
-            // }}
+            autoplay={{
+              delay: 4800,
+              disableOnInteraction: false,
+            }}
             modules={[Autoplay, FreeMode, Pagination]}
-            className={classes.mySwiper}
           >
-            <SwiperSlide>
-              <Card className={classes.testimonialsCard}>
-                <div
-                  style={{ display: "flex", justifyContent: "space-evenly" }}
-                >
-                  <img
-                    src={ProfileImg}
-                    alt="Profile"
-                    className={classes.testimonialsCardImg}
-                  />
-                  <div style={{ width: "50%" }}>
-                    <Typography
-                      variant="h4"
-                      className={classes.testimonialsCardName}
-                    >
-                      Vizet Robert
-                    </Typography>
-                    <Typography
-                      variant="h6"
-                      className={classes.testimonialsCardDesignation}
-                    >
-                      Arsaw, Poland
-                    </Typography>
-                  </div>
-                  <div style={{ display: "flex" }}>
-                    <Typography
-                      variant="h4"
-                      className={classes.testimonialsCardRating}
-                    >
-                      4.5
-                    </Typography>
-                    <img
-                      src={StarIcon}
-                      alt="Profile"
-                      className={classes.testimonialsCard_starIcon}
-                    />
-                  </div>
-                </div>
-                <Typography className={classes.testimonialsCardDescription}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Hac
-                  elit accumsan, urna nibh nibh et tortor ut enim. Consectetur
-                  est est tellus semper luctus. Auctor eget pellentesque at ut
-                  sed tincidunt nulla nisl.
-                </Typography>
-              </Card>
-            </SwiperSlide>
+            {[...Array(slidesNum)].map((elementInArray, index) => {
+              return (
+                <SwiperSlide>
+                  <TestimonialCard />
+                </SwiperSlide>
+              );
+            })}
           </Swiper>
         </Container>
       </Container>

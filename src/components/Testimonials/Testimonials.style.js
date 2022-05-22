@@ -35,6 +35,8 @@ export const useStyles = makeStyles((theme) => ({
     border: "2px solid #C4C4C4",
     borderRadius: "5px",
     padding: "1.3rem 0 1rem !important",
+    left: "50%",
+    transform: "translateX(-50%)",
   },
   testimonialsCardImg: {
     position: "relative",
