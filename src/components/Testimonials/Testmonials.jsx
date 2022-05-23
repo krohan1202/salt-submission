@@ -55,7 +55,7 @@ export default function Testmonials() {
           >
             {[...Array(slidesNum)].map((elementInArray, index) => {
               return (
-                <SwiperSlide>
+                <SwiperSlide key={index}>
                   <TestimonialCard />
                 </SwiperSlide>
               );

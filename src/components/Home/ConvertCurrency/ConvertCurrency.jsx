@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import {
   Container,
   Grid,
@@ -10,6 +10,8 @@ import {
 
 import { useStyles } from "./ConvertCurrency.style";
 
+import { ConvertCurrencyLogic } from "./ConvertCurrency.js";
+
 // Assets
 import ArrowIcon from "../../../assets/Home/ArrowIcon.svg";
 import ShieldIcon from "../../../assets/Home/ShieldIcon.svg";
@@ -17,63 +19,17 @@ import ShieldIcon from "../../../assets/Home/ShieldIcon.svg";
 export default function ConvertCurrency() {
   const classes = useStyles();
 
-  const [amount1, setAmount1] = useState(0);
-  const [amount2, setAmount2] = useState(0);
-  const [currency1, setCurrency1] = useState("USD");
-  const [currency2, setCurrency2] = useState("EUR");
-  const [rates, setRates] = useState([]);
-
-  useEffect(() => {
-    var myHeaders = new Headers();
-    // myHeaders.append("apikey", "Zcr0uxQOrKgw7ZiNfHd6u6MXdUcHxPal");
-
-    var requestOptions = {
-      method: "GET",
-      redirect: "follow",
-      headers: myHeaders,
-    };
-
-    // fetch("https://api.apilayer.com/fixer/latest?base=EUR", requestOptions)
-    //   .then((response) => response.json())
-    //   .then((result) => {
-    //     console.log(result.rates);
-    //     setRates(result.rates);
-    //   })
-    //   .catch((error) => console.log("error", error));
-  }, []);
-
-  useEffect(() => {
-    if (!!rates) {
-      function init() {
-        handleAmount1Change(0);
-      }
-      init();
-    }
-  }, [rates]);
-
-  function format(number) {
-    return number.toFixed(4);
-  }
-
-  function handleAmount1Change(amount1) {
-    setAmount2(format((amount1 * rates[currency2]) / rates[currency1]));
-    setAmount1(amount1);
-  }
-
-  function handleCurrency1Change(currency1) {
-    setAmount2(format((amount1 * rates[currency2]) / rates[currency1]));
-    setCurrency1(currency1);
-  }
-
-  function handleAmount2Change(amount2) {
-    setAmount1(format((amount2 * rates[currency1]) / rates[currency2]));
-    setAmount2(amount2);
-  }
-
-  function handleCurrency2Change(currency2) {
-    setAmount1(format((amount2 * rates[currency1]) / rates[currency2]));
-    setCurrency2(currency2);
-  }
+  const {
+    amount1,
+    handleAmount1Change,
+    currency1,
+    handleCurrency1Change,
+    amount2,
+    handleAmount2Change,
+    currency2,
+    handleCurrency2Change,
+    rates,
+  } = ConvertCurrencyLogic();
 
   return (
     <Container
@@ -107,7 +63,6 @@ export default function ConvertCurrency() {
             labelId="demo-simple-select-label"
             id="demo-simple-select"
             value={currency1}
-            // value={"INR"}
             onChange={(ev) => handleCurrency1Change(ev.target.value)}
             className={classes.currency_select}
           >
@@ -187,7 +142,7 @@ export default function ConvertCurrency() {
           variant="h2"
           className={classes.currency_conversionRateHeading}
         >
-          Conversion rate of : 1 USD = 75 INR
+          Conversion rate of : 1 USD = 77.54 INR
         </Typography>
       </div>
     </Container>

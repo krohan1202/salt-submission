@@ -1,7 +1,7 @@
 import React from "react";
 import clsx from "clsx";
 import { Link } from "react-router-dom";
-import { Container, Grid, Typography } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import { useStyles } from "./Footer.style";
 
 // Icons

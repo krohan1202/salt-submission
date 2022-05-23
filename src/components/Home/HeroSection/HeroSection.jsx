@@ -25,7 +25,7 @@ export default function HeroSection() {
               you don't have to.
             </Typography>
             <div className={classes.heroBtnDiv}>
-              <Link to="/get-started">
+              <Link to="/get-started" style={{ textDecoration: "none" }}>
                 <Button variant="contained">Get Started!</Button>
               </Link>
             </div>
