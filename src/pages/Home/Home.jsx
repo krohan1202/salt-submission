@@ -1,9 +1,22 @@
 import React from "react";
 
-export default function Home(props) {
+// Components
+import HeroSection from "../../components/Home/HeroSection/HeroSection.jsx";
+import Pricing from "../../components/Pricing/Pricing.jsx";
+import ConvertCurrency from "../../components/Home/ConvertCurrency/ConvertCurrency.jsx";
+import Testimonials from "../../components/Testimonials/Testmonials.jsx";
+import Newsletter from "../../components/Home/Newsletter/Newsletter.jsx";
+
+// import { useStyles } from "./Home.style.js";
+
+export default function Home() {
   return (
     <>
-      <h1>Check</h1>
+      <HeroSection />
+      <Pricing />
+      <ConvertCurrency />
+      <Testimonials />
+      <Newsletter />
     </>
   );
 }

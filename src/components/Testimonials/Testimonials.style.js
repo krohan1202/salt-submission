@@ -1,0 +1,77 @@
+import { makeStyles } from "@mui/styles";
+
+export const useStyles = makeStyles((theme) => ({
+  testimonialsSection: {
+    position: "relative",
+    margin: "0.6rem auto 1rem !important",
+    width: "90%",
+    padding: "3.5rem 0",
+    zIndex: "-1",
+  },
+  testimonialsHeading: {
+    position: "relative",
+    fontSize: "1.8rem !important",
+    fontWeight: "700 !important",
+    fontFamily: "'Inter', sans-serif !important",
+    color: theme.palette.secondary.main,
+    width: "33%",
+    left: "50%",
+    transform: "translateX(-50%)",
+  },
+  testimonialsDescription: {
+    position: "relative",
+    width: "35%",
+    left: "50%",
+    marginTop: "0.7rem !important",
+    transform: "translateX(-50%)",
+    textAlign: "center",
+    fontSize: "0.77rem !important",
+    fontWeight: "600 !important",
+    color: theme.palette.secondary.secondary,
+  },
+  testimonialsCard: {
+    position: "relative",
+    width: "18rem",
+    border: "2px solid #C4C4C4",
+    borderRadius: "5px",
+    padding: "1.3rem 0 1rem !important",
+    left: "50%",
+    transform: "translateX(-50%)",
+  },
+  testimonialsCardImg: {
+    position: "relative",
+    width: "2.5rem",
+    height: "2.5rem",
+    margin: "auto 0 !important",
+  },
+  testimonialsCardName: {
+    fontSize: "1.02rem !important",
+    fontWeight: "800 !important",
+    color: "#000",
+  },
+  testimonialsCardDesignation: {
+    marginTop: "0.1rem !important",
+    fontSize: "0.7rem !important",
+    fontWeight: "400 !important",
+    color: "#000",
+  },
+  testimonialsCardRating: {
+    fontSize: "0.8rem !important",
+    fontWeight: "800 !important",
+    color: "#000",
+    margin: "auto 0.4rem auto 0 !important",
+  },
+  testimonialsCard_starIcon: {
+    position: "relative",
+    width: "1rem",
+    height: "1rem",
+    margin: "auto 0 !important",
+  },
+  testimonialsCardDescription: {
+    fontSize: "0.7rem !important",
+    fontWeight: "600 !important",
+    color: "#000 !important",
+    padding: "1rem !important",
+    paddingBottom: "0 !important",
+  },
+}));
